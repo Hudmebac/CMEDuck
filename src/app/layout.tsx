@@ -4,6 +4,7 @@ import './globals.css';
 import { Header } from '@/components/layout/header';
 import { Toaster } from '@/components/ui/toaster';
 import { ThemeProvider } from '@/components/theme-provider';
+import { CopyrightYear } from '@/components/layout/copyright-year';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -22,7 +23,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${geistSans.variable} font-sans antialiased`}>
+      <body className={`${geistSans.variable} font-sans antialiased`} suppressHydrationWarning={true}>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
@@ -35,7 +36,7 @@ export default function RootLayout({
               {children}
             </main>
             <footer className="py-6 text-center text-muted-foreground">
-              <p>&copy; {new Date().getFullYear()} CME Duck Portfolio. Quacktastic!
+              <p>&copy; <CopyrightYear /> CME Duck Portfolio. Quacktastic!
               </p>
             </footer>
           </div>
