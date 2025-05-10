@@ -5,20 +5,21 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { ArrowRight, BookOpen, Music, Info } from "lucide-react";
 import Link from "next/link";
-import { RandomImage } from "@/components/image/random-image";
+import Image from "next/image"; // Import Next/Image
 
 export default function Home() {
   return (
     <div className="space-y-12">
       <section className="text-center py-16 bg-gradient-to-br from-background to-accent/10 rounded-lg shadow-xl overflow-hidden">
         <div className="relative z-10">
-          <RandomImage 
+          <Image 
+            src="/images/explorer.png" // Specific image path
             alt="CME Duck Hero" 
             width={180} 
             height={180} 
             className="mx-auto rounded-full mb-8 border-4 border-accent shadow-lg animate-fadeInScale object-contain"
             priority
-            data-ai-hint="duck hero"
+            data-ai-hint="explorer duck" // Updated data-ai-hint
           />
           <h1 className="text-5xl md:text-6xl font-extrabold mb-4 animate-slideUp">
             Welcome to <span className="text-accent">CME Duck</span> Adventures!
@@ -110,3 +111,4 @@ export default function Home() {
     </div>
   );
 }
+
