@@ -1,11 +1,13 @@
+
 export interface Story {
   id: string;
   title: string;
-  thumbnailUrl: string;
+  thumbnailUrl: string; // Retained for potential direct use, though RandomImage is primary
   category: string;
   content: string;
+  summary: string; 
   quacks: number;
-  aiHint: string;
+  aiHint: string; // For RandomImage data-ai-hint prop
 }
 
 export interface Song {
@@ -13,8 +15,8 @@ export interface Song {
   title: string;
   artist: string;
   audioSrc: string;
-  coverArtUrl: string;
+  coverArtUrl: string; // Retained for potential direct use
   upvotes: number;
   downvotes: number;
-  aiHint: string;
+  aiHint: string; // For RandomImage data-ai-hint prop
 }

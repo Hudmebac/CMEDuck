@@ -23,7 +23,8 @@ export function SongCard({ song, onPlay, onVote, userVote, isPlaying }: SongCard
         <RandomImage
           alt={`${song.title} cover art`}
           fill
-          className="object-cover"
+          className="object-contain" // Changed from object-cover
+          data-ai-hint={song.aiHint || "music album"}
         />
         {isPlaying && (
           <div className="absolute inset-0 bg-black/50 flex items-center justify-center">

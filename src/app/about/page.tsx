@@ -1,3 +1,4 @@
+
 import { RandomImage } from '@/components/image/random-image';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Zap, ShieldCheck, BarChart3, Lightbulb } from 'lucide-react';
@@ -10,7 +11,8 @@ export default function AboutPage() {
             alt="CME Duck Official Portrait" 
             width={150} 
             height={150} 
-            className="mx-auto rounded-full mb-6 border-4 border-accent shadow-lg"
+            className="mx-auto rounded-full mb-6 border-4 border-accent shadow-lg object-contain"
+            data-ai-hint="duck portrait"
           />
         <h1 className="text-4xl md:text-5xl font-extrabold mb-4">
           About <span className="text-accent">CME Duck</span> & The Portfolio
@@ -33,7 +35,8 @@ export default function AboutPage() {
               alt="CME Duck Comic Strip Excerpt" 
               width={300} 
               height={200} 
-              className="rounded-md shadow-md mb-4 md:mb-0 float-left mr-6 md:float-none md:mr-0"
+              className="rounded-md shadow-md mb-4 md:mb-0 float-left mr-6 md:float-none md:mr-0 object-contain"
+              data-ai-hint="duck comic"
             />
             <div>
               <p>

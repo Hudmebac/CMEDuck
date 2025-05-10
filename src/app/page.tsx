@@ -16,8 +16,9 @@ export default function Home() {
             alt="CME Duck Hero" 
             width={180} 
             height={180} 
-            className="mx-auto rounded-full mb-8 border-4 border-accent shadow-lg animate-fadeInScale"
+            className="mx-auto rounded-full mb-8 border-4 border-accent shadow-lg animate-fadeInScale object-contain"
             priority
+            data-ai-hint="duck hero"
           />
           <h1 className="text-5xl md:text-6xl font-extrabold mb-4 animate-slideUp">
             Welcome to <span className="text-accent">CME Duck</span> Adventures!
@@ -38,11 +39,6 @@ export default function Home() {
             </Link>
           </div>
         </div>
-        {/* Subtle background animation if desired */}
-        {/* <div className="absolute inset-0 opacity-10 animate-pulse">
-          <span className="absolute top-1/4 left-1/4 text-9xl">🦆</span>
-          <span className="absolute bottom-1/4 right-1/4 text-9xl">⚙️</span>
-        </div> */}
       </section>
 
       <section className="grid md:grid-cols-3 gap-8">

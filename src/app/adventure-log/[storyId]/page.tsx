@@ -1,3 +1,4 @@
+
 import { RandomImage } from '@/components/image/random-image';
 import { mockStories } from '@/lib/data';
 import type { Story } from '@/lib/types';
@@ -32,8 +33,9 @@ export default async function StoryPage({ params }: { params: { storyId: string 
           <RandomImage
             alt={story.title}
             fill
-            className="object-cover"
+            className="object-contain" // Changed from object-cover
             priority
+            data-ai-hint={story.aiHint || "adventure story"}
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-8">
             <h1 className="text-4xl md:text-5xl font-extrabold text-white drop-shadow-lg">

@@ -1,3 +1,4 @@
+
 import { RandomImage } from '@/components/image/random-image';
 import Link from 'next/link';
 import type { Story } from '@/lib/types';
@@ -16,9 +17,10 @@ export function StoryCard({ story }: StoryCardProps) {
         <div className="aspect-[4/3] overflow-hidden">
           <RandomImage
             alt={story.title}
-            width={400} // These are for aspect ratio guidance with object-cover
+            width={400} 
             height={300}
-            className="object-cover w-full h-full transition-transform duration-300 group-hover:scale-105"
+            className="object-contain w-full h-full transition-transform duration-300 group-hover:scale-105"
+            data-ai-hint={story.aiHint || "story thumbnail"}
           />
         </div>
         <CardHeader>
@@ -27,7 +29,7 @@ export function StoryCard({ story }: StoryCardProps) {
         </CardHeader>
         <CardContent>
           <p className="text-sm text-muted-foreground line-clamp-3">
-            {story.content.substring(0, 100)}...
+            {story.summary}
           </p>
         </CardContent>
         <CardFooter className="flex justify-between items-center text-sm text-muted-foreground">
