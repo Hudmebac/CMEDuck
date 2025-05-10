@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   title: 'CME Duck Adventures',
   description: 'Join CME Duck on his hilarious tech adventures!',
   icons: {
-    icon: '/favicon.ico', // Added favicon here
+    icon: '/favicon.ico',
   },
 };
 
@@ -26,12 +26,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${geistSans.variable} font-sans antialiased`} suppressHydrationWarning={true}>
+      <body className={`${geistSans.variable} font-sans antialiased`}>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
           enableSystem
           disableTransitionOnChange
+          themes={['light', 'dark', 'high-contrast', 'system']}
         >
           <div className="flex flex-col min-h-screen">
             <Header />
