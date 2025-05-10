@@ -33,7 +33,7 @@ export default async function StoryPage({ params }: { params: { storyId: string 
           <RandomImage
             alt={story.title}
             fill
-            className="object-contain" // Changed from object-cover
+            className="object-cover" // Changed from object-cover
             priority
             data-ai-hint={story.aiHint || "adventure story"}
           />

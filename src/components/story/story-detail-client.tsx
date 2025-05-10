@@ -4,7 +4,7 @@
 import type { Story } from "@/lib/types";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
-import { ThumbsUp, Share2 } from "lucide-react"; // Using ThumbsUp as proxy for Quack
+import { ThumbsUp } from "lucide-react"; // Using ThumbsUp as proxy for Quack
 import Image from "next/image";
 import { useState, useEffect } from "react";
 import { Badge } from "../ui/badge";
@@ -48,30 +48,6 @@ export function StoryDetailClient({ story }: StoryDetailClientProps) {
     }
   };
 
-  const handleShare = () => {
-    navigator.clipboard.writeText(currentUrl)
-      .then(() => {
-        toast({
-          title: "Link Copied!",
-          description: "Story link copied to clipboard.",
-        });
-      })
-      .catch(err => {
-        console.error("Failed to copy to clipboard: ", err);
-        toast({
-          title: "Failed to copy",
-          description: "Could not copy link to clipboard.",
-          variant: "destructive",
-        });
-      })
-      .finally(() => {
-        if (['1', '2', '3', '4'].includes(story.id)) {
-          const shareText = encodeURIComponent("Just a bit of fun. Quacktastic hoax. #cmeduck.netlify.app");
-          const whatsappUrl = `whatsapp://send?text=${shareText} ${encodeURIComponent(currentUrl)}`;
-          window.open(whatsappUrl, '_blank');
-        } // Corrected: closes the 'if' block
-      }); // Correct: closes the '.finally()' and the promise chain
-  }; // Correct: closes the 'handleShare' function
 
   return (
     <div className="space-y-6">
@@ -103,9 +79,6 @@ export function StoryDetailClient({ story }: StoryDetailClientProps) {
       <div className="flex flex-col sm:flex-row gap-4 pt-6 border-t">
         <Button onClick={handleQuack} disabled={hasQuacked} className="btn-custom w-full sm:w-auto">
           <ThumbsUp className="mr-2 h-5 w-5" /> {hasQuacked ? "Quacked!" : "Quack Reaction"}
-        </Button>
-        <Button onClick={handleShare} variant="outline" className="w-full sm:w-auto btn-custom-outline">
-          <Share2 className="mr-2 h-5 w-5" /> Share Story
         </Button>
       </div>
     </div>

@@ -16,7 +16,6 @@ export const metadata: Metadata = {
   description: 'Join CME Duck on his hilarious tech adventures!',
   icons: {
     icon: '/favicon.ico',
- icon: '/images/favicon.ico',
   },
 };
 
@@ -27,7 +26,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${geistSans.variable} font-sans antialiased`}>
+      <body className={`${geistSans.variable} font-sans antialiased`} suppressHydrationWarning={true}>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
