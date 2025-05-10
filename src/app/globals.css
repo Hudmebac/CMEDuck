@@ -34,7 +34,7 @@
     
     --radius: 0.75rem; /* Card corner radius */
 
-    /* Sidebar specific - keeping for potential future use or if some components rely on them */
+    /* Sidebar specific */
     --sidebar-background: 0 0% 96%;
     --sidebar-foreground: 0 0% 7%;
     --sidebar-primary: 39 100% 50%;
@@ -95,6 +95,53 @@
     --chart-3: 30 80% 55%;
     --chart-4: 280 65% 60%;
     --chart-5: 340 75% 55%;
+  }
+
+  .high-contrast {
+    --background: 0 0% 0%; /* Black */
+    --foreground: 0 0% 100%; /* White */
+
+    --card: 0 0% 0%;
+    --card-foreground: 0 0% 100%;
+
+    --popover: 0 0% 0%;
+    --popover-foreground: 0 0% 100%;
+
+    --primary: 0 0% 100%; 
+    --primary-foreground: 0 0% 0%;
+
+    --secondary: 60 100% 50%; /* Bright Yellow #FFFF00 */
+    --secondary-foreground: 0 0% 0%; /* Black text on yellow */
+
+    --muted: 0 0% 20%; /* Dark Gray */
+    --muted-foreground: 0 0% 85%; /* Lighter Gray for readability */
+
+    --accent: 240 100% 50%; /* Bright Blue #0000FF */
+    --accent-foreground: 0 0% 100%; /* White text on blue */
+
+    --destructive: 0 100% 50%; /* Bright Red #FF0000 */
+    --destructive-foreground: 0 0% 100%; /* White text on red */
+
+    --border: 0 0% 70%; /* Bright Gray for borders */
+    --input: 0 0% 70%;  /* Bright Gray for input borders */
+    --ring: 240 100% 50%; /* Bright Blue for rings */
+    
+    /* Sidebar specific for high-contrast */
+    --sidebar-background: 0 0% 0%;
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-primary: 240 100% 50%; /* Bright Blue */
+    --sidebar-primary-foreground: 0 0% 100%; /* White */
+    --sidebar-accent: 0 0% 20%; /* Dark Gray for hover/subtle accents */
+    --sidebar-accent-foreground: 0 0% 100%; /* White */
+    --sidebar-border: 0 0% 70%; /* Bright Gray */
+    --sidebar-ring: 240 100% 50%; /* Bright Blue */
+
+    /* Chart colors for high-contrast */
+    --chart-1: 60 100% 50%;   /* Yellow */
+    --chart-2: 200 100% 50%;  /* Bright Cyan */
+    --chart-3: 300 100% 50%;  /* Magenta */
+    --chart-4: 120 100% 45%;  /* Bright Green */
+    --chart-5: 30 100% 50%;   /* Orange */
   }
 }
 
