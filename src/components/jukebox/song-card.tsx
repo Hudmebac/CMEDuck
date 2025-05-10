@@ -1,6 +1,7 @@
+
 "use client";
 
-import Image from 'next/image';
+import { RandomImage } from '@/components/image/random-image';
 import type { Song } from '@/lib/types';
 import { Button } from '@/components/ui/button';
 import { Play, ThumbsUp, ThumbsDown, CheckCircle } from 'lucide-react'; // CheckCircle for voted indication
@@ -19,12 +20,10 @@ export function SongCard({ song, onPlay, onVote, userVote, isPlaying }: SongCard
   return (
     <div className="card-base p-4 flex flex-col sm:flex-row items-center gap-4 transition-all duration-300 ease-in-out hover:shadow-xl">
       <div className="relative w-20 h-20 sm:w-24 sm:h-24 rounded-md overflow-hidden shrink-0">
-        <Image
-          src={song.coverArtUrl}
+        <RandomImage
           alt={`${song.title} cover art`}
           fill
           className="object-cover"
-          data-ai-hint={song.aiHint}
         />
         {isPlaying && (
           <div className="absolute inset-0 bg-black/50 flex items-center justify-center">

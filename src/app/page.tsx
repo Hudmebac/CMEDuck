@@ -5,20 +5,18 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { ArrowRight, BookOpen, Music, Info } from "lucide-react";
 import Link from "next/link";
-import Image from "next/image";
+import { RandomImage } from "@/components/image/random-image";
 
 export default function Home() {
   return (
     <div className="space-y-12">
       <section className="text-center py-16 bg-gradient-to-br from-background to-accent/10 rounded-lg shadow-xl overflow-hidden">
         <div className="relative z-10">
-          <Image 
-            src="/images/home_duck.png" 
+          <RandomImage 
             alt="CME Duck Hero" 
             width={180} 
             height={180} 
             className="mx-auto rounded-full mb-8 border-4 border-accent shadow-lg animate-fadeInScale"
-            data-ai-hint="duck home"
             priority
           />
           <h1 className="text-5xl md:text-6xl font-extrabold mb-4 animate-slideUp">

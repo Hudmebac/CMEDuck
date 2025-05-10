@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import { RandomImage } from '@/components/image/random-image';
 import Link from 'next/link';
 import type { Story } from '@/lib/types';
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
@@ -14,13 +14,11 @@ export function StoryCard({ story }: StoryCardProps) {
     <Link href={`/adventure-log/${story.id}`} className="block group">
       <Card className="card-base h-full overflow-hidden transition-all duration-300 ease-in-out group-hover:shadow-2xl group-hover:-translate-y-1">
         <div className="aspect-[4/3] overflow-hidden">
-          <Image
-            src={story.thumbnailUrl}
+          <RandomImage
             alt={story.title}
-            width={400}
+            width={400} // These are for aspect ratio guidance with object-cover
             height={300}
             className="object-cover w-full h-full transition-transform duration-300 group-hover:scale-105"
-            data-ai-hint={story.aiHint}
           />
         </div>
         <CardHeader>

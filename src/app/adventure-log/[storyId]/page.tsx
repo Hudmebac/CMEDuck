@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import { RandomImage } from '@/components/image/random-image';
 import { mockStories } from '@/lib/data';
 import type { Story } from '@/lib/types';
 import { StoryDetailClient } from '@/components/story/story-detail-client';
@@ -29,12 +29,10 @@ export default async function StoryPage({ params }: { params: { storyId: string 
 
       <Card className="card-base overflow-hidden">
         <div className="relative aspect-[16/7] overflow-hidden">
-          <Image
-            src={story.thumbnailUrl} 
+          <RandomImage
             alt={story.title}
             fill
             className="object-cover"
-            data-ai-hint={`${story.aiHint} landscape`}
             priority
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-8">
