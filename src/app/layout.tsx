@@ -14,6 +14,9 @@ const geistSans = Geist({
 export const metadata: Metadata = {
   title: 'CME Duck Adventures',
   description: 'Join CME Duck on his hilarious tech adventures!',
+  icons: {
+    icon: '/favicon.ico', // Added favicon here
+  },
 };
 
 export default function RootLayout({
