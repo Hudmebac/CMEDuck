@@ -32,16 +32,16 @@ export default function AboutPage() {
         </CardHeader>
         <CardContent className="space-y-4 text-lg text-foreground/80">
           <div className="md:flex md:items-center md:gap-6">
-            {/* Image of CME Duck */}
             <NextImage 
-              alt="CME Duck"
-              width={400} // Adjust width and height as needed
+              src="/images/eureka.png"
+              alt="CME Duck having an idea"
+              width={400} 
               height={300}
               className="rounded-md shadow-md mb-4 md:mb-0 float-left mr-6 md:float-none md:mr-0 object-contain"
- data-ai-hint="CME Duck" />
+              data-ai-hint="duck idea" />
               <p className="mt-2">
                 Through humorous stories and relatable challenges, CME Duck demystifies technical concepts, making learning an adventure. Whether optimizing performance, hardening security, or implementing new frameworks, CME Duck tackles each task with a can-do attitude and a hearty "Quack!"
- </p>
+              </p>
             </div>
           </CardContent>
       </Card>
