@@ -16,6 +16,7 @@ export const metadata: Metadata = {
   description: 'Join CME Duck on his hilarious tech adventures!',
   icons: {
     icon: '/favicon.ico',
+ icon: '/images/favicon.ico',
   },
 };
 

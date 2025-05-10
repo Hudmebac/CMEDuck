@@ -1,3 +1,4 @@
+
 "use client";
 
 import type { Story } from "@/lib/types";
@@ -7,6 +8,7 @@ import { ThumbsUp, Share2 } from "lucide-react"; // Using ThumbsUp as proxy for 
 import Image from "next/image";
 import { useState, useEffect } from "react";
 import { Badge } from "../ui/badge";
+import { RandomImage } from "../image/random-image";
 
 interface StoryDetailClientProps {
   story: Story;
@@ -47,55 +49,44 @@ export function StoryDetailClient({ story }: StoryDetailClientProps) {
   };
 
   const handleShare = () => {
-    navigator.clipboard.writeText(currentUrl).then(() => {
-      toast({
-        title: "Link Copied!",
-        description: "Story link copied to clipboard.",
-      });
-    }).catch(err => {
-      toast({
-        title: "Failed to copy",
-        description: "Could not copy link to clipboard.",
-        variant: "destructive",
-      });
-    });
-  };
+    navigator.clipboard.writeText(currentUrl)
+      .then(() => {
+        toast({
+          title: "Link Copied!",
+          description: "Story link copied to clipboard.",
+        });
+      })
+      .catch(err => {
+        console.error("Failed to copy to clipboard: ", err);
+        toast({
+          title: "Failed to copy",
+          description: "Could not copy link to clipboard.",
+          variant: "destructive",
+        });
+      })
+      .finally(() => {
+        if (['1', '2', '3', '4'].includes(story.id)) {
+          const shareText = encodeURIComponent("Just a bit of fun. Quacktastic hoax. #cmeduck.netlify.app");
+          const whatsappUrl = `whatsapp://send?text=${shareText} ${encodeURIComponent(currentUrl)}`;
+          window.open(whatsappUrl, '_blank');
+        } // Corrected: closes the 'if' block
+      }); // Correct: closes the '.finally()' and the promise chain
+  }; // Correct: closes the 'handleShare' function
 
   return (
     <div className="space-y-6">
-      {story.id === '1' && (
-        <Image
- src="/images/CMEDuck.png"
- alt="Story 1 illustration"
- width={600}
- height={400}
-        />
-      )}
-      {story.id === '2' && (
-        <Image
- src="/images/explore.png"
- alt="Story 2 illustration"
- width={600}
- height={400}
-        />
-      )}
-      {story.id === '3' && (
-        <Image
- src="/images/smile.png"
- alt="Story 3 illustration"
- width={600}
- height={400}
-        />
-      )}
-      {story.id === '4' && (
-        <Image
- src="/images/wave.png"
- alt="Story 4 illustration"
- width={600}
- height={400}
-        />
-      )}
- <div className="flex flex-wrap gap-4 items-center">
+      {/* Removed specific image rendering for story.id as RandomImage will be used */}
+      <div className="flex justify-center my-4">
+         <RandomImage
+            alt={story.title + " illustration"}
+            width={600}
+            height={400}
+            className="rounded-md shadow-lg object-contain"
+            data-ai-hint={story.aiHint || "story illustration"}
+          />
+      </div>
+      
+      <div className="flex flex-wrap gap-4 items-center">
         <Badge variant="secondary" className="bg-secondary/20 text-secondary-foreground border-secondary/50 text-sm px-3 py-1">
           Category: {story.category}
         </Badge>
@@ -105,9 +96,9 @@ export function StoryDetailClient({ story }: StoryDetailClientProps) {
         </div>
       </div>
 
-      <p className="text-lg text-foreground/80 whitespace-pre-wrap">
+      <article className="prose dark:prose-invert max-w-none text-lg text-foreground/80 whitespace-pre-wrap">
         {story.content}
-      </p>
+      </article>
 
       <div className="flex flex-col sm:flex-row gap-4 pt-6 border-t">
         <Button onClick={handleQuack} disabled={hasQuacked} className="btn-custom w-full sm:w-auto">
