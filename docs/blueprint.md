@@ -2,7 +2,7 @@
 
 ## Core Features:
 
-- CME Duck's Adventure Log: A collection of short, humorous stories about CME Duck tackling challenges related to value streams, performance optimization, security hardening, and framework implementation.
+- CME Duck's Adventure Log: A collection of short, humorous stories about CME Duck tackling challenges related to value streams, performance optimisation, security hardening, and framework implementation.
 - Story Interaction: Users can browse story titles/thumbnails, read stories, react (e.g., with a quack emoji) to stories, and share story links (internally).
 - QuackBox Jukebox: A jukebox featuring royalty-free tracks or custom parody songs about tech/CME where Users can browse a song list (Title, Artist/Source), Play, Pause, Next, Previous song, and control the volume.
 - Jukebox Voting: A voting system where users can upvote/downvote songs. Users can only vote once per song and songs can be sorted by popularity.

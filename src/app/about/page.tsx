@@ -1,4 +1,5 @@
 
+import NextImage from 'next/image';
 import { RandomImage } from '@/components/image/random-image';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Zap, ShieldCheck, BarChart3, Lightbulb } from 'lucide-react';
@@ -8,7 +9,7 @@ export default function AboutPage() {
     <div className="space-y-12">
       <section className="text-center py-10">
         <RandomImage 
-            alt="CME Duck Official Portrait" 
+            alt="CME Duck Official Portrait"
             width={150} 
             height={150} 
             className="mx-auto rounded-full mb-6 border-4 border-accent shadow-lg object-contain"
@@ -31,23 +32,18 @@ export default function AboutPage() {
         </CardHeader>
         <CardContent className="space-y-4 text-lg text-foreground/80">
           <div className="md:flex md:items-center md:gap-6">
-            <RandomImage 
-              alt="CME Duck Comic Strip Excerpt" 
-              width={300} 
-              height={200} 
+            {/* Image of CME Duck */}
+            <NextImage 
+              alt="CME Duck"
+              width={400} // Adjust width and height as needed
+              height={300}
               className="rounded-md shadow-md mb-4 md:mb-0 float-left mr-6 md:float-none md:mr-0 object-contain"
-              data-ai-hint="duck comic"
-            />
-            <div>
-              <p>
-                CME Duck isn't just any waterfowl; he's a symbol of innovation, resilience, and a relentless pursuit of excellence in the tech world. Born from a desire to make complex technology accessible and engaging, CME Duck embodies the spirit of curiosity and problem-solving. 
-              </p>
+ data-ai-hint="CME Duck" />
               <p className="mt-2">
                 Through humorous stories and relatable challenges, CME Duck demystifies technical concepts, making learning an adventure. Whether optimizing performance, hardening security, or implementing new frameworks, CME Duck tackles each task with a can-do attitude and a hearty "Quack!"
-              </p>
+ </p>
             </div>
-          </div>
-        </CardContent>
+          </CardContent>
       </Card>
 
       <Card className="card-base">

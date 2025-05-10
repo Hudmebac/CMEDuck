@@ -1,6 +1,8 @@
 // src/lib/image-utils.ts
 export const publicImages = [
   '/images/CMEDuck.png',
+  '/images/cute.png',
+  '/images/eureka.png',
   '/images/duckrapper.jpg',
   '/images/home_duck.png',
   '/images/hero_duck_guitar.png',
@@ -12,6 +14,7 @@ export const publicImages = [
   '/images/song_duck_studio.png',
   '/images/song_duck_stage.png',
   '/images/song_duck_techno.png',
+  '/images/wave.png',
 ];
 
 // This function is intended for use in client components within useEffect or for server components

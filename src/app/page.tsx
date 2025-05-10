@@ -13,11 +13,11 @@ export default function Home() {
       <section className="text-center py-16 bg-gradient-to-br from-background to-accent/10 rounded-lg shadow-xl overflow-hidden">
         <div className="relative z-10">
           <Image 
-            src="/images/explorer.png" // Specific image path
+            src="/images/home_duck.png" // Specific image path
             alt="CME Duck Hero" 
             width={180} 
             height={180} 
-            className="mx-auto rounded-full mb-8 border-4 border-accent shadow-lg animate-fadeInScale object-contain"
+            className="mx-auto rounded-full mb-8 border-4 border-accent shadow-lg animate-fadeInScale object-contain bg-black"
             priority
             data-ai-hint="explorer duck" // Updated data-ai-hint
           />

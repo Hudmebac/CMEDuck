@@ -18,15 +18,17 @@ export function RandomImage({
   width, 
   height, 
   fill, 
-  className, 
   priority, 
+  className,
   ['data-ai-hint']: aiHint, // Destructure data-ai-hint
   ...rest 
 }: RandomImageProps) {
   const [imageSrc, setImageSrc] = useState<string | null>(null);
 
   useEffect(() => {
-    setImageSrc(getRandomImageSrc());
+    let src = getRandomImageSrc();
+    if (!src) src = getRandomImageSrc(); // Retry if the first attempt failed
+    setImageSrc(src);
   }, []);
 
   if (!imageSrc) {

@@ -4,6 +4,7 @@ import type { Story } from "@/lib/types";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
 import { ThumbsUp, Share2 } from "lucide-react"; // Using ThumbsUp as proxy for Quack
+import Image from "next/image";
 import { useState, useEffect } from "react";
 import { Badge } from "../ui/badge";
 
@@ -62,7 +63,39 @@ export function StoryDetailClient({ story }: StoryDetailClientProps) {
 
   return (
     <div className="space-y-6">
-      <div className="flex flex-wrap gap-4 items-center">
+      {story.id === '1' && (
+        <Image
+ src="/images/CMEDuck.png"
+ alt="Story 1 illustration"
+ width={600}
+ height={400}
+        />
+      )}
+      {story.id === '2' && (
+        <Image
+ src="/images/explore.png"
+ alt="Story 2 illustration"
+ width={600}
+ height={400}
+        />
+      )}
+      {story.id === '3' && (
+        <Image
+ src="/images/smile.png"
+ alt="Story 3 illustration"
+ width={600}
+ height={400}
+        />
+      )}
+      {story.id === '4' && (
+        <Image
+ src="/images/wave.png"
+ alt="Story 4 illustration"
+ width={600}
+ height={400}
+        />
+      )}
+ <div className="flex flex-wrap gap-4 items-center">
         <Badge variant="secondary" className="bg-secondary/20 text-secondary-foreground border-secondary/50 text-sm px-3 py-1">
           Category: {story.category}
         </Badge>
@@ -72,11 +105,9 @@ export function StoryDetailClient({ story }: StoryDetailClientProps) {
         </div>
       </div>
 
-      <div className="prose dark:prose-invert max-w-none text-lg leading-relaxed">
-        {story.content.split('\n').map((paragraph, index) => (
-          <p key={index}>{paragraph}</p>
-        ))}
-      </div>
+      <p className="text-lg text-foreground/80 whitespace-pre-wrap">
+        {story.content}
+      </p>
 
       <div className="flex flex-col sm:flex-row gap-4 pt-6 border-t">
         <Button onClick={handleQuack} disabled={hasQuacked} className="btn-custom w-full sm:w-auto">

@@ -17,6 +17,7 @@ export function StoryCard({ story }: StoryCardProps) {
         <div className="aspect-[4/3] overflow-hidden">
           <RandomImage
             alt={story.title}
+            src={story.thumbnailUrl}
             width={400} 
             height={300}
             className="object-contain w-full h-full transition-transform duration-300 group-hover:scale-105"
@@ -29,7 +30,7 @@ export function StoryCard({ story }: StoryCardProps) {
         </CardHeader>
         <CardContent>
           <p className="text-sm text-muted-foreground line-clamp-3">
-            {story.summary}
+            {story.content.substring(0, 200) + '...'}
           </p>
         </CardContent>
         <CardFooter className="flex justify-between items-center text-sm text-muted-foreground">
