@@ -66,6 +66,9 @@ export default {
   			md: 'calc(var(--radius) - 2px)',
   			sm: 'calc(var(--radius) - 4px)'
   		},
+  		fontFamily: {
+        sans: ['var(--font-geist-sans)'],
+      },
   		keyframes: {
   			'accordion-down': {
   				from: {
@@ -82,13 +85,59 @@ export default {
   				to: {
   					height: '0'
   				}
-  			}
+  			},
+        'fade-in-scale': {
+          '0%': { opacity: '0', transform: 'scale(0.8)' },
+          '100%': { opacity: '1', transform: 'scale(1)' },
+        },
+        'slide-up': {
+          '0%': { opacity: '0', transform: 'translateY(20px)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' },
+        },
   		},
   		animation: {
   			'accordion-down': 'accordion-down 0.2s ease-out',
-  			'accordion-up': 'accordion-up 0.2s ease-out'
-  		}
+  			'accordion-up': 'accordion-up 0.2s ease-out',
+        'fade-in-scale': 'fade-in-scale 0.5s ease-out forwards',
+        'slide-up': 'slide-up 0.5s ease-out forwards',
+  		},
+      typography: (theme: (path: string) => string) => ({
+        DEFAULT: {
+          css: {
+            '--tw-prose-body': theme('colors.foreground / 0.8'),
+            '--tw-prose-headings': theme('colors.primary'),
+            '--tw-prose-lead': theme('colors.foreground / 0.9'),
+            '--tw-prose-links': theme('colors.accent'),
+            '--tw-prose-bold': theme('colors.primary'),
+            '--tw-prose-counters': theme('colors.muted.foreground'),
+            '--tw-prose-bullets': theme('colors.muted.foreground'),
+            '--tw-prose-hr': theme('colors.border'),
+            '--tw-prose-quotes': theme('colors.primary'),
+            '--tw-prose-quote-borders': theme('colors.accent'),
+            '--tw-prose-captions': theme('colors.muted.foreground'),
+            '--tw-prose-code': theme('colors.primary'),
+            '--tw-prose-pre-code': theme('colors.card.foreground'),
+            '--tw-prose-pre-bg': theme('colors.card.DEFAULT'),
+            '--tw-prose-th-borders': theme('colors.border'),
+            '--tw-prose-td-borders': theme('colors.border'),
+          },
+        },
+        invert: {
+           css: {
+            '--tw-prose-body': theme('colors.foreground / 0.8'),
+            '--tw-prose-headings': theme('colors.primary'),
+            '--tw-prose-lead': theme('colors.foreground / 0.9'),
+            '--tw-prose-links': theme('colors.accent'),
+            '--tw-prose-bold': theme('colors.primary'),
+            '--tw-prose-pre-code': theme('colors.card.foreground'),
+            '--tw-prose-pre-bg': theme('colors.muted / 0.5'), // Darker pre background
+          },
+        }
+      }),
   	}
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [
+    require("tailwindcss-animate"),
+    require('@tailwindcss/typography'),
+  ],
 } satisfies Config;
