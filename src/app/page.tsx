@@ -1,3 +1,4 @@
+
 "use client";
 
 import { Button } from "@/components/ui/button";
@@ -12,12 +13,12 @@ export default function Home() {
       <section className="text-center py-16 bg-gradient-to-br from-background to-accent/10 rounded-lg shadow-xl overflow-hidden">
         <div className="relative z-10">
           <Image 
-            src="https://picsum.photos/seed/heroDuck/300/300" 
+            src="https://picsum.photos/seed/heroDuckGuitar/300/300" 
             alt="CME Duck Hero" 
             width={180} 
             height={180} 
             className="mx-auto rounded-full mb-8 border-4 border-accent shadow-lg animate-fadeInScale"
-            data-ai-hint="cartoon duck"
+            data-ai-hint="duck guitar"
           />
           <h1 className="text-5xl md:text-6xl font-extrabold mb-4 animate-slideUp">
             Welcome to <span className="text-accent">CME Duck</span> Adventures!
