@@ -1,6 +1,5 @@
 
 import NextImage from 'next/image';
-import { RandomImage } from '@/components/image/random-image';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Zap, ShieldCheck, BarChart3, Lightbulb } from 'lucide-react';
 
@@ -8,12 +7,13 @@ export default function AboutPage() {
   return (
     <div className="space-y-12">
       <section className="text-center py-10">
-        <RandomImage 
+        <NextImage 
+            src="/images/explore.png"
             alt="CME Duck Official Portrait"
             width={150} 
             height={150} 
             className="mx-auto rounded-full mb-6 border-4 border-accent shadow-lg object-contain"
-            data-ai-hint="duck portrait"
+            data-ai-hint="explorer duck"
           />
         <h1 className="text-4xl md:text-5xl font-extrabold mb-4">
           About <span className="text-accent">CME Duck</span> & The Portfolio
