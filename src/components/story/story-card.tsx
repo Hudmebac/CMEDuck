@@ -20,7 +20,7 @@ export function StoryCard({ story }: StoryCardProps) {
             src={story.thumbnailUrl}
             width={400} 
             height={300}
-            className="object-cover w-full h-full transition-transform duration-300 group-hover:scale-105"
+            className="object-contain w-full h-full transition-transform duration-300 group-hover:scale-105"
             data-ai-hint={story.aiHint || "story thumbnail"}
           />
         </div>
