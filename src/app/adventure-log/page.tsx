@@ -1,5 +1,6 @@
-import { mockStories } from '@/lib/data';
+import { Story } from '@/lib/types';
 import { StoryCard } from '@/components/story/story-card';
+import { mockStories } from '@/lib/data';
 
 export default function AdventureLogPage() {
   const stories = mockStories;
@@ -20,7 +21,10 @@ export default function AdventureLogPage() {
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {stories.map((story) => (
-            <StoryCard key={story.id} story={story} />
+            <StoryCard
+              key={story.id}
+              story={story}
+            />
           ))}
         </div>
       )}

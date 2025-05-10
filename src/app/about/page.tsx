@@ -7,12 +7,12 @@ export default function AboutPage() {
     <div className="space-y-12">
       <section className="text-center py-10">
         <Image 
-            src="https://picsum.photos/seed/aboutDuck/200/200" 
+            src="/images/CMEDuck.png" 
             alt="CME Duck Official Portrait" 
             width={150} 
             height={150} 
             className="mx-auto rounded-full mb-6 border-4 border-accent shadow-lg"
-            data-ai-hint="wise duck"
+            data-ai-hint="duck mascot"
           />
         <h1 className="text-4xl md:text-5xl font-extrabold mb-4">
           About <span className="text-accent">CME Duck</span> & The Portfolio
@@ -32,12 +32,12 @@ export default function AboutPage() {
         <CardContent className="space-y-4 text-lg text-foreground/80">
           <div className="md:flex md:items-center md:gap-6">
             <Image 
-              src="https://picsum.photos/seed/duckComic/600/400" 
+              src="/images/duckrapper.jpg" 
               alt="CME Duck Comic Strip Excerpt" 
               width={300} 
               height={200} 
               className="rounded-md shadow-md mb-4 md:mb-0 float-left mr-6 md:float-none md:mr-0"
-              data-ai-hint="duck comic"
+              data-ai-hint="duck rapper"
             />
             <div>
               <p>

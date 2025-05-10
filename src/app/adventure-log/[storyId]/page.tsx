@@ -30,7 +30,7 @@ export default async function StoryPage({ params }: { params: { storyId: string 
       <Card className="card-base overflow-hidden">
         <div className="relative aspect-[16/7] overflow-hidden">
           <Image
-            src={story.thumbnailUrl.replace('/400/300', '/800/350')} // Larger image for detail view
+            src={story.thumbnailUrl} 
             alt={story.title}
             fill
             className="object-cover"
