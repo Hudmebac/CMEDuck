@@ -1,6 +1,8 @@
+
 import { Story } from '@/lib/types';
 import { StoryCard } from '@/components/story/story-card';
 import { mockStories } from '@/lib/data';
+import { RandomImage } from '@/components/image/random-image';
 
 export default function AdventureLogPage() {
   const stories = mockStories;
@@ -8,6 +10,13 @@ export default function AdventureLogPage() {
   return (
     <div className="space-y-8">
       <section className="text-center py-10">
+        <RandomImage
+            width={150}
+            height={150}
+            alt="CME Duck's Adventure Log"
+            className="mx-auto rounded-full mb-6 border-4 border-accent shadow-lg object-contain"
+            data-ai-hint="adventure journal"
+          />
         <h1 className="text-4xl md:text-5xl font-extrabold mb-4">
           CME Duck's <span className="text-accent">Adventure Log</span>
         </h1>

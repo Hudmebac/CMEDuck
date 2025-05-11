@@ -5,23 +5,15 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { ArrowRight, BookOpen, Music, Info } from "lucide-react";
 import Link from "next/link";
-import Image from "next/image"; // Import Next/Image
+import Image from "next/image"; 
 
 export default function Home() {
   return (
     <div className="space-y-12">
       <section className="text-center py-16 bg-gradient-to-br from-background to-accent/10 rounded-lg shadow-xl overflow-hidden">
         <div className="relative z-10">
-          <Image 
-            src="/images/home_duck.png" // Specific image path
-            alt="CME Duck Hero" 
-            width={180} 
-            height={180} 
-            className="mx-auto rounded-full mb-8 border-4 border-accent shadow-lg animate-fadeInScale object-contain bg-black"
-            priority
-            data-ai-hint="explorer duck" // Updated data-ai-hint
-          />
-          <h1 className="text-5xl md:text-6xl font-extrabold mb-4 animate-slideUp">
+          {/* The main hero image that was here has been removed as per request */}
+          <h1 className="text-5xl md:text-6xl font-extrabold my-8 animate-slideUp">
             Welcome to <span className="text-accent">CME Duck</span> Adventures!
           </h1>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-8 animate-slideUp" style={{ animationDelay: '0.2s' }}>
@@ -43,15 +35,15 @@ export default function Home() {
       </section>
 
       <section className="grid md:grid-cols-3 gap-8">
-        <Link href="/adventure-log" className="block hover:scale-105 transition-transform duration-300">
-          <Card className="card-base h-full group">
+        <Link href="/adventure-log" className="block">
+          <Card className="card-base h-full group hover:shadow-accent/20 hover:shadow-lg transition-shadow">
             <CardHeader>
               <div className="flex items-center gap-3">
-                <BookOpen className="h-8 w-8 text-secondary group-hover:animate-pulse" />
+                <BookOpen className="h-8 w-8 text-secondary" />
                 <CardTitle className="text-2xl group-hover:text-secondary">Adventure Log</CardTitle>
               </div>
             </CardHeader>
-            <CardContent>
+            <CardContent className="flex flex-col items-center justify-center">
               <p className="text-muted-foreground">
                 Follow CME Duck's escapades in value streams, performance, security, and frameworks. Laugh and learn!
               </p>
@@ -59,8 +51,8 @@ export default function Home() {
           </Card>
         </Link>
 
-        <Link href="/jukebox" className="block hover:scale-105 transition-transform duration-300">
-          <Card className="card-base h-full group">
+        <Link href="/jukebox" className="block">
+          <Card className="card-base h-full group hover:shadow-accent/20 hover:shadow-lg transition-shadow">
             <CardHeader>
               <div className="flex items-center gap-3">
                 <Music className="h-8 w-8 text-secondary group-hover:animate-pulse" />
@@ -75,8 +67,8 @@ export default function Home() {
           </Card>
         </Link>
 
-        <Link href="/about" className="block hover:scale-105 transition-transform duration-300">
-          <Card className="card-base h-full group">
+        <Link href="/about" className="block">
+          <Card className="card-base h-full group hover:shadow-accent/20 hover:shadow-lg transition-shadow">
             <CardHeader>
               <div className="flex items-center gap-3">
                 <Info className="h-8 w-8 text-secondary group-hover:animate-pulse" />
@@ -111,4 +103,3 @@ export default function Home() {
     </div>
   );
 }
-
