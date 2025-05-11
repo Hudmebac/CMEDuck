@@ -29,20 +29,10 @@ export default async function StoryPage({ params }: { params: { storyId: string 
       </Link>
 
       <Card className="card-base overflow-hidden">
-        <div className="relative aspect-[16/7] overflow-hidden">
-          <RandomImage
-            alt={story.title}
-            fill
-            className="object-cover" // Changed from object-cover
-            priority
-            data-ai-hint={story.aiHint || "adventure story"}
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-8">
+        <div className="relative aspect-[16/7] overflow-hidden flex items-end p-8 bg-gradient-to-t from-black/70 to-transparent">
             <h1 className="text-4xl md:text-5xl font-extrabold text-white drop-shadow-lg">
               {story.title}
-            </h1>
-          </div>
-        </div>
+            </h1></div>
         <CardContent className="p-6 md:p-8">
           <StoryDetailClient story={story} />
         </CardContent>

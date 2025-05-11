@@ -9,6 +9,13 @@ export default function DuckShootPage() {
   return (
     <div className="space-y-8">
       <section className="text-center py-10">
+        <NextImage
+          src="/images/duckshoot.png"
+          alt="Duck Shoot Game Banner"
+          width={600}
+          height={200}
+          className="mx-auto mb-8" // Center the image and add margin below
+        />
         <Camera className="mx-auto h-16 w-16 text-accent mb-4" />
         <h1 className="text-4xl md:text-5xl font-extrabold mb-4">
           Duck <span className="text-accent">Shoot</span> Gallery

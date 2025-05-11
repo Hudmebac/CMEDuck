@@ -14,7 +14,7 @@ interface JukeboxClientProps {
 }
 
 export function JukeboxClient({ initialSongs }: JukeboxClientProps) {
-  const [songs, setSongs] = useState<Song[]>(initialSongs);
+  const [songs, setSongs] = useState<Song[]>([]); // Initialize with empty array
   const [currentSong, setCurrentSong] = useState<Song | null>(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const [volume, setVolume] = useState(0.5);
@@ -30,21 +30,21 @@ export function JukeboxClient({ initialSongs }: JukeboxClientProps) {
   const [currentTime, setCurrentTime] = useState(0);
 
   useEffect(() => {
+    // Import mockSongs inside useEffect to avoid issues with server rendering
+    import('@/lib/data').then(({ mockSongs }) => {
     // Load votes from localStorage
     const storedVotes = localStorage.getItem('jukeboxUserVotes');
     if (storedVotes) {
       setUserVotes(JSON.parse(storedVotes));
     }
     // Apply votes to initial songs
-    setSongs(prevSongs => 
-      prevSongs.map(song => {
-        const vote = JSON.parse(storedVotes || '{}')[song.id];
-        // This doesn't change the actual upvotes/downvotes from data.ts,
-        // only reflects the user's local perception for UI until a backend is added.
-        return song; 
+    setSongs(mockSongs.map(song => {
+        // Create a mutable copy to apply local votes
+        return { ...song };
       })
     );
-  }, []);
+    });
+  }, []); // Run only once on mount
 
   useEffect(() => {
     // Save votes to localStorage

@@ -57,7 +57,7 @@ export default function AboutPage() {
           <div className="grid md:grid-cols-3 gap-6">
             <div className="card-base p-6 bg-background/50 hover:shadow-accent/20 hover:shadow-lg transition-shadow">
               <Zap className="h-10 w-10 text-accent mb-3" />
-              <h3 className="text-xl font-semibold mb-2">Performance Optimization</h3>
+              <h3 className="text-xl font-semibold mb-2">Performance Optimisation</h3>
               <p className="text-sm text-muted-foreground">
                 Delivering lightning-fast applications that provide seamless user experiences. We fine-tune every aspect, from front-end rendering to back-end processing.
               </p>
@@ -78,7 +78,7 @@ export default function AboutPage() {
             </div>
           </div>
           <p className="text-lg text-foreground/80 mt-4">
-            Through these value streams, the CME Portfolio, championed by CME Duck, strives to push the boundaries of what's possible in technology, always with a focus on delivering tangible benefits and a touch of fun.
+ We are the enablers for the Value streams, the CME Portfolio, championed by CME Duck, strives to push the boundaries of what's possible in technology, always with a focus on delivering tangible benefits and a touch of fun. (Also the protecting of Sky estate for now and the future...) Brought to you by Quacktastic Solutions ™
           </p>
         </CardContent>
       </Card>
